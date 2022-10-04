@@ -10,9 +10,10 @@ import xlrd
 import numpy as np
 import torch
 
-
+# Paths for Labels and Images
 BP4D_EXCEL = "BP4D/BP4D_data.xlsx"
 BP4D_IMAGES = "BP4D/images_crop"
+# Images paths and Occurrence labels used to create a pickle file.
 BP4D_OCCURENCE = "BP4D/aus_bp4d_occurrence.pkl"
 
 def load_image(filename):
@@ -108,7 +109,8 @@ def BP4D_perm_gender(train_aug=False):
 #    data_dict = load_info(excel_file)
     train_datasets = {}
     val_datasets = {}
-    task_output_space = {}     
+    task_output_space = {}
+    # Example train_fold. Update this to randomly select train-fold based on subject IDs from the BP4D dataset.
     train_fold = ['F001', 'F002', 'F008', 'F009', 'F010', 'F016', 'F018', 'F023', 'M001', 'M004', 'M007', 'M008', 'M012', 'M014']
    
     y_male, X_male = split_gender("M", datax, label)
@@ -175,7 +177,7 @@ def BP4D_perm_race(train_aug=False):
         category = data_dict[f[:4]].index(1.0)
         datasets[str(category) + "_y"][f] = label[f]
         
-    
+    # Example test_fold. Update this to select test-fold based on subject IDs from the BP4D dataset.
     test_fold = ['F001', 'F002', 'F008', 'F009', 'F010', 'F016', 'F018', 'F023', 'M001', 'M004', 'M007', 'M008', 'M012', 'M014']
     train_datasets = {}
     val_datasets = {}
