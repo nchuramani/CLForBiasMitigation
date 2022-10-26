@@ -17,7 +17,7 @@ The scripts for reproducing the results of this paper are under the scripts fold
 ## Bash Script
 Simple python3 experiment example
 ```bash
-python3 -u main.py --gpuid $GPUID --repeat $REPEAT --optimizer Adam  --no_class_remap --force_out_dim 7 --schedule 25 --batch_size 24 --model_type mycnn --model_name Net  --agent_type customization  --agent_name GEM_100  --lr 0.0001 --reg_coef 10 100  --category gender --train_aug
+python3 -u main.py --gpuid $GPUID --repeat $REPEAT --optimizer Adam  --no_class_remap --force_out_dim 7 --schedule 25 --batch_size 24 --model_type custom_cnn --model_name Net  --agent_type customization  --agent_name EWC  --lr 0.0001 --reg_coef 10 100  --category gender --train_aug
 ```
 Update the scripts to choose:
 1. ```--category``` from ```['gender', 'race']```.

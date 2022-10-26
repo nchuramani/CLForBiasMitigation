@@ -6,7 +6,7 @@ def files(path):
         if os.path.isfile(os.path.join(path, file)):
             yield file
             
-folder = "gender_new/" # folder of the result path that includes .txt files
+folder = "/home/ozgur/Documents/CLForBiasMitigation/Benchmark with BP4D/results/gender/" # folder of the result path that includes .txt files
 methods = ["EWC_"]
 regularization_list = ["10.0_","50.0_","100.0_","500.0_","1000.0_","5000.0_"]
 
@@ -61,10 +61,10 @@ for file in files(folder):
 for keys in mydict_2:
     for key in mydict_acc[keys]:
         mydict_2[keys][key + "_meanstd"] = np.vstack((mydict_2[keys][key].mean(axis=0)[:,-1], mydict_2[keys][key].std(axis=0)[:,-1]))
-	mydict_2[keys][key + "_avg"] = mydict_2[keys][key].mean(axis=0)
+        mydict_2[keys][key + "_avg"] = mydict_2[keys][key].mean(axis=0)
 a = {}
 b = {}  
-      
+print('BWT scores')
 for met in methods:
     print(met)
     for par in regularization_list:
@@ -77,7 +77,7 @@ for met in methods:
         print(par,"not augmented", BWT(y))
         print(par, "augmented", BWT(x))
 
-
+print('accuracy scores')
 for met in methods:
     for par in regularization_list:
         a = mydict_2[list(mydict_2.keys())[0]]
@@ -86,6 +86,7 @@ for met in methods:
         x = b[met + par + "meanstd"]
         y = a[met + par + "meanstd"]
         print(met+par)
+        print("Without Augmentation: gender_1 acc , gender_2 acc, fairness\ With Augmentation: gender_1 acc, gender_2 acc , fairness")
         print("%.3f$\pm$ %.3f & %.3f$\pm$%.3f & %.3f & %.3f$\pm$%.3f & %.3f$\pm$%.3f & %.3f"  % (x[0,0], x[1,0], x[0,1], x[1,1], min(x[0,0] / x[0,1], x[0,1]/x[0,0] ), y[0,0], y[1,0], y[0,1], y[1,1], min(y[0,0] / y[0,1], y[0,1]/y[0,0] )))
         
         

@@ -142,9 +142,9 @@ def RafDB_perm(category, train_aug=False):
              ])
     
     attribute_list = ["gender", "race", "age"]
-    data_path = "RAF-DB/basic/Image/aligned/"
-    classes_path = "RAF-DB/basic/EmoLabel/list_partition_label.txt"
-    attribute_path = "RAF-DB/basic/Annotation/manual/"
+    data_path = "/home/ozgur/Documents/Rafdb/basic/Image/aligned/"
+    classes_path = "/home/ozgur/Documents/Rafdb/basic/EmoLabel/list_partition_label.txt"
+    attribute_path = "/home/ozgur/Documents/Rafdb/basic/Annotation/manual/"
     num_of_train = 12271
     num_of_test = 3068
     size = [3,100,100]

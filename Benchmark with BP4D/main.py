@@ -172,7 +172,10 @@ if __name__ == '__main__':
             acc_table, task_names, f1_table = run(args)
             print(acc_table)
             name = args.category if args.train_aug == False else args.category + "_augmented"
-            with open(f'results/{name}.txt', 'a') as f:
+
+            if not os.path.exists(f'results/{args.category}'):
+                os.makedirs(f'results/{args.category}')
+            with open(f'results/{args.category}/{name}.txt', 'a') as f:
                 f.write("\n" + str(acc_table) + "f1: " +  str(f1_table) + " repeat:" + str(r) + " reg_coef: " + str(reg_coef)  + " " +  str(args.agent_name))
             # Calculate average performance across tasks
             # Customize this part for a different performance metric

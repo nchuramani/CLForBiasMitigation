@@ -4,6 +4,8 @@ import torch.utils.data as data
 from torch.utils.data import Dataset
 from PIL import Image
 import numpy as np
+import os
+
 class CacheClassLabel(data.Dataset):
     """
     A dataset wrapper that has a quick access to all labels of data.
@@ -12,6 +14,8 @@ class CacheClassLabel(data.Dataset):
         super(CacheClassLabel, self).__init__()
         self.dataset = dataset
         self.labels = torch.LongTensor(len(self.dataset)).fill_(-1)
+        if not os.path.exists(self.dataset.root):
+            os.makedirs(self.dataset.root)
         label_cache_filename = path.join(self.dataset.root, str(type(self.dataset))+'_'+str(len(self.dataset))+'.pth')
         if path.exists(label_cache_filename):
             self.labels = torch.load(label_cache_filename)
