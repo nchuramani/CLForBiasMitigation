@@ -7,7 +7,7 @@ def files(path):
             yield file
 
 # folder should contain both the augmented and not augmented results       
-folder = "/home/ozgur/Documents/CLForBiasMitigation/Benchmarkwith RAF-DB/results/race/" # folder of the result path that includes .txt files
+folder = "results/race/" # folder of the result path that includes .txt files
 methods = ["EWC_"]
 regularization_list = ["10.0_","100.0_"]
 
