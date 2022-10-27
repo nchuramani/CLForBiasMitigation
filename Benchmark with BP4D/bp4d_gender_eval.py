@@ -8,7 +8,7 @@ def files(path):
             
 folder = "results/gender/" # folder of the result path that includes .txt files
 methods = ["EWC_"]
-regularization_list = ["10.0_","50.0_","100.0_","500.0_","1000.0_","5000.0_"]
+regularization_list = ["1.0_", "10.0_", "100.0_"]
 
 mydict_acc = {}
 mydict_2 = {}
