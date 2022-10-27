@@ -9,7 +9,7 @@ def files(path):
 # folder should contain both the augmented and not augmented results       
 folder = "results/race/" # folder of the result path that includes .txt files
 methods = ["EWC_"]
-regularization_list = ["10.0_","100.0_"]
+regularization_list = ["1.0_", "10.0_", "100.0_"]
 
 mydict_acc = {}
 mydict_2 = {}
