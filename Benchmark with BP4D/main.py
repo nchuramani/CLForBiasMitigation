@@ -8,7 +8,7 @@ from collections import OrderedDict
 import dataloaders.base
 from dataloaders.datasetGen import SplitGen, PermutedGen, RafdbTask
 import agents
-from dataloaders.base import RafDB_perm, BP4D_perm_race, BP4D_perm_gender
+from dataloaders.base import BP4D_perm_race, BP4D_perm_gender
 import xlrd
 from sklearn.model_selection import KFold
 

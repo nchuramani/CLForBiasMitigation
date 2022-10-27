@@ -94,7 +94,6 @@ def BP4D_perm_gender(train_aug=False):
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     
     file = BP4D_OCCURENCE
-#    excel_file = "BP4D/BP4D_data.xlsx"
     with open(file, "rb") as f:
         label = pickle.load(f)
     
@@ -103,10 +102,7 @@ def BP4D_perm_gender(train_aug=False):
 
     au_list = ["1", "2", "4", "6", "7", "10", "12", "14", "15", "17", "23", "24"]    
     for i,f in enumerate(onlyfiles):
-        # if(i%5000 == 0):
-        #     print(i)
         datax[f[:-4]] = load_image(mypath + "/" + f)
-#    data_dict = load_info(excel_file)
     train_datasets = {}
     val_datasets = {}
     task_output_space = {}
@@ -150,7 +146,6 @@ def BP4D_perm_race(train_aug=False):
     mypath = BP4D_IMAGES
     onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
     file = BP4D_OCCURENCE
-#    excel_file = "BP4D/BP4D_data.xlsx"
     with open(file, "rb") as f:
         label = pickle.load(f)
     
@@ -165,8 +160,6 @@ def BP4D_perm_race(train_aug=False):
         datasets[str(i) + "_x"] = {}
         datasets[str(i) + "_y"] = {}
     for i,f in enumerate(onlyfiles):
-        if(i%5000 == 0):
-            print(i)
         img = load_image(mypath + "/" + f)
         datax[f[:-4]] = img
         category = data_dict[f[:4]].index(1.0)

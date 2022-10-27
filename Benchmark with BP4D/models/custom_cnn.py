@@ -12,7 +12,6 @@ class Net(nn.Module):
         self.layer3 = self.one_block(4, 2*self.num_features)
         self.layer4 = self.one_block(8, 4*self.num_features)
         self.flat = nn.Flatten()
-        #self.fc1 = nn.Linear(37632, 8 * self.num_features)
         self.fc1 = nn.Linear(768, 8 * self.num_features)
         self.fc2 = nn.Linear(8 * self.num_features, 4 * self.num_features)
         self.fc3 = nn.Linear(4 * self.num_features, 2 * self.num_features)
