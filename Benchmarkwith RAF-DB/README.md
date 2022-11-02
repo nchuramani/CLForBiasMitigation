@@ -2,7 +2,7 @@
 ```bash
 pip install -r requirements.txt
 ```
-Request access and download the RAF-DB dataset (Basic data split) and put it under  ```RAF-DB/``` as the same level as main.py.
+[Request access](http://www.whdeng.cn/raf/model1.html) and download the RAF-DB dataset (Basic data split) and put it under  ```RafDB/``` as the same level as main.py.
 Adapt the data paths under ```dataloader/base.py``` accordingly.
    
 ## Example Script
@@ -27,6 +27,8 @@ Update the scripts to choose:
 
 Please refer to [Continual-Learning-Benchmark](https://github.com/GT-RIPL/Continual-Learning-Benchmark) for more details.
 
+This will generate corresponding result text files under ```results/``` for model performance scores.
+
 ## Evaluation
 
 Evaluation code (for gender or race, update the variable in rafdb_eval.py accordingly): 
@@ -34,4 +36,4 @@ Evaluation code (for gender or race, update the variable in rafdb_eval.py accord
 python3 rafdb_eval.py
 ```
 
-This code reads the result text files and prints both the BWT scores and the mean/std of the accuracies & fairness scores of the experiments.
+This reads the result text files under ```results/``` and print BWT scores and the mean/std of the accuracies & fairness scores of the experiments.

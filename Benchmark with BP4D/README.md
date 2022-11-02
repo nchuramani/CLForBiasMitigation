@@ -2,7 +2,7 @@
 ```bash
 pip install -r requirements.txt
 ```
-Request access and download the BP4D dataset and put it under  ```BP4D/``` as the same level as main.py.
+[Request access](https://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html) and download the BP4D dataset and put it under  ```BP4D/``` as the same level as main.py.
 Adapt the data paths under ```dataloader/base.py``` accordingly.
 
 ## Example Script
@@ -27,6 +27,7 @@ Update the scripts to choose:
 
 Please refer to [Continual-Learning-Benchmark](https://github.com/GT-RIPL/Continual-Learning-Benchmark) for more details.
 
+This will generate corresponding result text files under ```results/``` for model performance scores.
 ## Evaluation
 
 Evaluation code for gender: 
@@ -38,4 +39,4 @@ Evaluation code for race:
 python3 bp4d_race_eval.py
 ```
 
-These codes read the result text files and print both the BWT scores and the mean/std of the accuracies & fairness scores of the experiments.
+These read the result text files under ```results/``` and print BWT scores and the mean/std of the accuracies & fairness scores of the experiments.
