@@ -8,7 +8,7 @@ Adapt the data paths under ```dataloader/base.py``` accordingly.
 ## Example Script
 The scripts for reproducing the results of this paper are under the scripts folder.
 - 
-- Example: Run ECW experiments with regularization coefficients 1 10 100 with the Domain-Incremental scenario with BP4D.  
+- Example: Run EWC experiments with regularization coefficients 1 10 100 with the Domain-Incremental scenario with BP4D.  
 ```bash
 ./scripts/example.sh 0
 # The last number is gpuid
