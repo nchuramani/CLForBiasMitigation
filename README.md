@@ -8,7 +8,7 @@ Code for individual benchmark experiments with the BP4D and RAF-DB datasets can 
 As Facial Expression Recognition (FER) systems become integrated into our daily lives, these systems need to prioritise making fair decisions instead of only aiming at higher individual accuracy scores. From surveillance systems, to monitoring the mental and emotional health of individuals, these systems need to balance the accuracy versus fairness trade-off to make decisions that do not unjustly discriminate against specific under-represented demographic groups. Identifying bias as a critical problem in facial analysis systems, different methods have been proposed that aim to mitigate bias both at data and algorithmic levels. In this work, we propose the novel use of Continual Learning (CL), in particular, using Domain-Incremental Learning (Domain-IL) settings, as a potent bias mitigation method to enhance the fairness of Facial Expression Recognition (FER) systems. We compare different non-Continual Learning (CL)-based and CL-based methods for their performance and fairness scores on expression recognition and Action Unit (AU) detection tasks using two popular benchmarks, the RAF-DB and BP4D datasets, respectively. Our experimental results show that CL-based methods, on average, outperform other popular bias mitigation techniques on both accuracy and fairness metrics.
 
 ## Citation
-Please consider citing our papers:
+
 ```
 @article{Churamani2022CL4BiasMitigation,
   author={Churamani, Nikhil and Kara, Ozgur and Gunes, Hatice},
